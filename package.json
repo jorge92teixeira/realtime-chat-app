@@ -1,0 +1,25 @@
+{
+  "name": "realtime-chat-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^5.0.0",
+    "cors": "^2.8.5",
+    "cross-env": "^6.0.3",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.4",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node index.js",
+    "server": "cross-env NODE_ENV=development nodemon index.js",
+    "client": "BROWSER=none npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
