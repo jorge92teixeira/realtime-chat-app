@@ -7,8 +7,6 @@ import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
 import UserList from '../UserList/UserList';
 
-import './Chat.css';
-
 let socket;
 
 const Chat = ({ location }) => {
@@ -51,8 +49,6 @@ const Chat = ({ location }) => {
     e.preventDefault();
     if (message) socket.emit('sendMessage', message, () => setMessage(''));
   };
-
-  console.log(message, messages, users);
 
   return (
     <div className="outerContainer">
