@@ -78,10 +78,10 @@ button:focus {
 }
 
 .heading {
-  color: white;
+  color: #f4f4f4;
   font-size: 2.5em;
   padding-bottom: 10px;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #f4f4f4;
 }
 
 .button {
@@ -108,7 +108,7 @@ button:focus {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #FFFFFF;
+  background: #f4f4f4;
   border-radius: 8px;
   height: 60%;
   width: 35%;
@@ -129,7 +129,7 @@ button:focus {
   display: flex;
   align-items: center;
   margin-left: 5%;
-  color: white;
+  color: #f4f4f4;
 }
 
 .rightInnerContainer {
@@ -175,7 +175,7 @@ input:focus, textarea:focus, select:focus {
   background: #F3F3F3;
   border-radius: 20px;
   padding: 5px 20px;
-  color: white;
+  color: #f4f4f4;
   display: inline-block;
   max-width: 80%;
 }
@@ -203,7 +203,7 @@ input:focus, textarea:focus, select:focus {
   display: flex;
   align-items: center;
   font-family: Helvetica;
-  color: #828282;
+  color: #228B22;
   letter-spacing: 0.3px;
 }
 
@@ -216,7 +216,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .colorWhite {
-  color: white;
+  color: #f4f4f4;
 }
 
 .colorDark {
@@ -228,7 +228,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .backgroundLight {
-  background: #F3F3F3;
+  background: #e6e6e6;
 }
 
 .messages {
@@ -241,7 +241,7 @@ input:focus, textarea:focus, select:focus {
   display: flex;
   flex-direction: column;
   margin-left: 100px;
-  color: white;
+  color: #f4f4f4;
   height: 60%;
   justify-content: space-between;
 }

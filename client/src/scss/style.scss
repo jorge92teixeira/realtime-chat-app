@@ -1,5 +1,6 @@
 @import 'utilities';
 @import 'mobile';
+@import 'config';
 
 * {
   box-sizing: border-box;
@@ -29,7 +30,7 @@ button:focus {
   text-align: center;
   height: 100vh;
   align-items: center;
-  background-color: #1A1A1D;
+  background-color: $dark-background;
 }
 
 .joinInnerContainer {
@@ -43,17 +44,17 @@ button:focus {
 }
 
 .heading {
-  color: white;
+  color: $light-color;
   font-size: 2.5em;
   padding-bottom: 10px;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid $light-color;
 }
 
 .button {
     color: #fff !important;
     text-transform: uppercase;
     text-decoration: none;
-    background: #2979FF;
+    background: $blue-background;
     padding: 20px;
     border-radius: 5px;
     display: inline-block;
@@ -68,14 +69,14 @@ button:focus {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #1A1A1D;
+  background-color: $dark-background;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #FFFFFF;
+  background: $light-color;
   border-radius: 8px;
   height: 60%;
   width: 35%;
@@ -87,7 +88,7 @@ button:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #2979FF;
+  background: $blue-background;
   border-radius: 4px 4px 0 0;
   height: 60px;
   width: 100%;
@@ -98,7 +99,7 @@ button:focus {
   display: flex;
   align-items: center;
   margin-left: 5%;
-  color: white;
+  color: $light-color;
 }
 
 .rightInnerContainer {
@@ -135,7 +136,7 @@ input:focus, textarea:focus, select:focus{
   color: #fff !important;
   text-transform: uppercase;
   text-decoration: none;
-  background: #2979FF;
+  background: $blue-background;
   padding: 20px;
   display: inline-block;
   border: none;
@@ -148,7 +149,7 @@ input:focus, textarea:focus, select:focus{
   background: #F3F3F3;
   border-radius: 20px;
   padding: 5px 20px;
-  color: white;
+  color: $light-color;
   display: inline-block;
   max-width: 80%;
 }
@@ -176,7 +177,7 @@ input:focus, textarea:focus, select:focus{
   display: flex;
   align-items: center;
   font-family: Helvetica;
-  color: #828282;
+  color: #228B22;
   letter-spacing: 0.3px;
 }
 
@@ -189,19 +190,19 @@ input:focus, textarea:focus, select:focus{
 }
 
 .colorWhite {
-  color: white;
+  color: $light-color;
 }
 
 .colorDark {
-  color: #353535;
+  color: $dark-color;
 }
 
 .backgroundBlue {
-  background: #2979FF;
+  background: $blue-background;
 }
 
 .backgroundLight {
-  background: #F3F3F3;
+  background: $light-background;
 }
 
 // Messages
@@ -218,7 +219,7 @@ input:focus, textarea:focus, select:focus{
   display: flex;
   flex-direction: column;
   margin-left: 100px;
-  color: white;
+  color: $light-color;
   height: 60%;
   justify-content: space-between;
 }
