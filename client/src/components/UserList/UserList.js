@@ -2,7 +2,7 @@ import React from 'react';
 
 import onlineIcon from '../../icons/onlineIcon.png';
 
-import './UserList.css';
+// import './UserList.css';
 
 const UserList = ({ users }) => (
   <div className="textContainer">

@@ -1,15 +1,24 @@
-html, body {
-  font-family: 'Roboto', sans-serif;
-  padding: 0;
+@import 'utilities';
+@import 'mobile';
+
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+button:focus {
+  outline: 0;
 }
 
 #root {
   height: 100vh;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 .joinOuterContainer {
@@ -48,24 +57,4 @@ html, body {
     display: inline-block;
     border: none;
     width: 100%;
-}
-
-.mt-20 {
-  margin-top: 20px;
-}
-
-@media (min-width: 320px) and (max-width: 480px) {
-  .joinOuterContainer {
-    height: 100%;
-  }
-
-  .joinInnerContainer {
-    width: 90%;
-  }
-
-
-}
-
-button:focus {
-  outline: 0;
 }
