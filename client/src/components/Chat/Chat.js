@@ -7,8 +7,6 @@ import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
 import UserList from '../UserList/UserList';
 
-// import './Chat.css';
-
 let socket;
 
 const Chat = ({ location }) => {
