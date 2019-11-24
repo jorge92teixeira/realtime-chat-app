@@ -1,38 +1,73 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const JoinWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Input = styled.input`
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  margin: 1rem;
+  padding: 1rem;
+  opacity: 0.8;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    opacity: 1;
+  }
+
+  &:focus::placeholder {
+    color: transparent;
+  }
+`;
+
+const StyledLink = styled(Link)`
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  margin: 1rem;
+  padding: 1rem;
+  opacity: 0.8;
+  text-decoration: none;
+  text-align: center;
+  background-color: #006d86;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+`;
 
 const Join = () => {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
 
   return (
-    <div className="joinOuterContainer">
-      <div className="joinInnerContainer">
-        <h1 className="heading">Join</h1>
-        <div>
-          <input
-            placeholder="Name"
-            className="joinInput"
-            type="text"
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div>
-          <input
-            placeholder="Room"
-            className="joinInput mt-20"
-            type="text"
-            onChange={(e) => setRoom(e.target.value)}
-          />
-        </div>
-        <Link
-          onClick={(e) => ((!name || !room) ? e.preventDefault() : null) }
-          to={`/chat?name=${name}&room=${room}`}
-        >
-          <button className="button mt-20" type="submit">Sign In</button>
-        </Link>
-      </div>
-    </div>
+    <JoinWrapper>
+      <Input
+        placeholder="Name"
+        type="text"
+        onChange={(e) => setName(e.target.value)}
+      />
+      <Input
+        placeholder="Room"
+        type="text"
+        onChange={(e) => setRoom(e.target.value)}
+      />
+      <StyledLink
+        onClick={(e) => ((!name || !room) ? e.preventDefault() : null) }
+        to={`/chat?name=${name}&room=${room}`}
+      >
+        Sign In
+      </StyledLink>
+    </JoinWrapper>
   );
 };
 
