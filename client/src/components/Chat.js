@@ -1,13 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import queryString from 'query-string';
 import io from 'socket.io-client';
+import styled from 'styled-components';
 
-import InfoBar from '../Infobar/InfoBar';
-import Input from '../Input/Input';
-import Messages from '../Messages/Messages';
-import UserList from '../UserList/UserList';
+import InfoBar from './InfoBar';
+import Input from './Input';
+import Messages from './Messages';
+import UserList from './UserList';
 
 let socket;
+
+const ChatContainer = styled.div`
+
+  border: 1px solid black;
+
+
+  border-radius: 0.5rem;
+  background: #444753;
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  height: 80vh;
+`;
+
+const MessagesContainer = styled.div`
+
+  border: 1px solid green;
+
+
+  background: #F2F5F8;
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+`;
 
 const Chat = ({ location }) => {
   const [name, setName] = useState('');
@@ -51,18 +76,18 @@ const Chat = ({ location }) => {
   };
 
   return (
-    <div className="outerContainer">
-      <div className="container">
-        <InfoBar room={room}/>
+    <ChatContainer>
+      <UserList users={users} />
+      <MessagesContainer>
+        <div>{room}</div>
         <Messages messages={messages} name={name} />
         <Input
           message={message}
           setMessage={setMessage}
           sendMessage={sendMessage}
         />
-      </div>
-      <UserList users={users} />
-    </div>
+      </MessagesContainer>
+    </ChatContainer>
   );
 };
 
