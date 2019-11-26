@@ -3,35 +3,33 @@ import queryString from 'query-string';
 import io from 'socket.io-client';
 import styled from 'styled-components';
 
-import InfoBar from './InfoBar';
-import Input from './Input';
+import MessageBox from './MessageBox';
 import Messages from './Messages';
 import UserList from './UserList';
 
 let socket;
 
 const ChatContainer = styled.div`
-
-  border: 1px solid black;
-
-
   border-radius: 0.5rem;
   background: #444753;
   display: flex;
   flex-direction: row;
   width: 80vw;
   height: 80vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 
 const MessagesContainer = styled.div`
-
-  border: 1px solid green;
-
-
   background: #F2F5F8;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 75%;
+  padding: 1rem;
+
 `;
 
 const Chat = ({ location }) => {
@@ -53,7 +51,7 @@ const Chat = ({ location }) => {
     socket.emit('join', { name, room }, (error) => {
       if (error) alert(error);
     });
-  }, [ENDPOINT, location.search]);
+  }, [location.search]);
 
   useEffect(() => {
     socket.on('message', (message) => {
@@ -77,11 +75,13 @@ const Chat = ({ location }) => {
 
   return (
     <ChatContainer>
-      <UserList users={users} />
+      <UserList
+        users={users}
+        room={room}
+      />
       <MessagesContainer>
-        <div>{room}</div>
         <Messages messages={messages} name={name} />
-        <Input
+        <MessageBox
           message={message}
           setMessage={setMessage}
           sendMessage={sendMessage}

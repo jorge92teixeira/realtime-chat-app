@@ -4,6 +4,12 @@ import styled from 'styled-components';
 const ListContainer = styled.div`
   color: white;
   width: 25%;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 `;
 
 const User = styled.div`
@@ -32,19 +38,28 @@ const User = styled.div`
     overflow: hidden;
     text-overflow: ellipsis; 
   }
-
 `;
 
-const UserList = ({ users }) => (
+const Header = styled.div`
+  bottom: 0;
+  border-bottom: 2px solid white;
+  padding: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;   
+`;
+
+const UserList = ({ users, room }) => (
   <ListContainer>
     {
       users
         ? (
           <div>
+            <Header>{room}</Header>
             {
               users.map((u) => (
                 <User key={u.name}>
-                  <div className="initial">{u.name.slice(0, 1).toUpperCase()}</div>
+                  {/* <div className="initial">{u.name.slice(0, 1).toUpperCase()}</div> */}
                   <div className="name">{u.name}</div>
                 </User>
               ))

@@ -5,6 +5,4 @@ import App from './App';
 
 import './index.css';
 
-// import './styling/css/style.css';
-
 ReacDOM.render(<App />, document.getElementById('root'));
