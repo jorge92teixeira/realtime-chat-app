@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const socketio = require('socket.io');
 const http = require('http');
 
@@ -16,6 +17,16 @@ const io = socketio(server);
 const router = require('./router');
 
 app.use(router);
+
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 io.on('connection', (socket) => {
   socket.on('join', ({ name, room }, callback) => {

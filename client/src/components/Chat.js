@@ -3,6 +3,7 @@ import queryString from 'query-string';
 import io from 'socket.io-client';
 import styled from 'styled-components';
 
+import { SERVER_URL } from '../config';
 import MessageBox from './MessageBox';
 import Messages from './Messages';
 import UserList from './UserList';
@@ -38,12 +39,12 @@ const Chat = ({ location }) => {
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('');
   const [users, setUsers] = useState('');
-  const ENDPOINT = 'localhost:5000';
+  // const ENDPOINT = 'http://localhost:5000';
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
 
-    socket = io(ENDPOINT);
+    socket = io(SERVER_URL);
 
     setName(name);
     setRoom(room);
@@ -75,6 +76,7 @@ const Chat = ({ location }) => {
 
   return (
     <ChatContainer>
+      {console.log('environment', process.env.NODE_ENV)}
       <UserList
         users={users}
         room={room}
