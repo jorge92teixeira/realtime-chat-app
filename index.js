@@ -17,8 +17,8 @@ const io = socketio(server);
 
 const router = require('./router');
 
-app.use(router);
 app.use(cors());
+app.use(router);
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
