@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const socketio = require('socket.io');
 const http = require('http');
+const cors = require('cors');
 
 const {
   addUser,
@@ -17,6 +18,7 @@ const io = socketio(server);
 const router = require('./router');
 
 app.use(router);
+app.use(cors());
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
